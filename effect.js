@@ -194,7 +194,16 @@ $('document').ready(function(){
 
 	});
 });
-
+document.getElementById('play').addEventListener('click', function() {
+	var cake = document.querySelector('.tuoi');
+	var anh = document.querySelector('.image-container');
+	anh.style.display = 'flex';
+	cake.style.display = 'block';
+	setTimeout(function() {
+		cake.style.display = 'none';
+		anh.style.display = 'none';
+	}, 12000); // Adjust the time (in milliseconds) as needed
+});
 
 
 

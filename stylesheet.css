@@ -13,7 +13,7 @@ body {
 }
 .peach {
 	background-color: #FFDAB9;
-	
+
 }
 .peach-after {
 	-webkit-animation:peach_alive linear 8s infinite;
@@ -1074,16 +1074,55 @@ audio {
 		transform:translate(0px,0px);
 	}
 }
+#imageContainer {
+	display: none;
+}
 
+.image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 700px; /* Adjust as needed */
+	height: 200px; /* Adjust as needed */
+	margin: 0 auto; /* Center the container */
+}
+
+.rotating-image {
+	width: 180px; /* Adjust as needed */
+	height: 180px; /* Adjust as needed */
+	border-radius: 50%;
+	border: 5px solid #ccc; /* Adjust color and width as needed */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for a 3D effect */
+	background-size: cover;
+	animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.tuoi{
+	font-size: 50px;
+	color: #BF4136;
+	text-shadow: 5px 5px 5px #FFF;
+	font-family: 'Signika', sans-serif;
+	display: none;
+	text-align: center;
+}
 .balloons {
 	position: fixed;
-	bottom: -200px;
+	bottom: 0; /* Ensure the ball is fully visible from the bottom */
 	opacity: 0.6;
 	z-index: 99;
 	width: 100px;
 	height: 183px;
-	background-repeat: no-repeat no-repeat;
-	background-size: 100px 183px;
+	background-size: contain; /* Ensure the background image fits within the element */
+	background-repeat: no-repeat;
+	background-position: center;
 }
 .balloons h2 {
 	text-transform: uppercase;
@@ -1299,7 +1338,113 @@ audio {
         color: #fff;
         background-color: #466baf;
     }
+/* Base responsive styles */
+@media screen and (max-width: 768px) {
+	/* Container adjustments */
+	.container {
+		padding: 10px;
+		width: 100%;
+		overflow-x: hidden;
+	}
 
+	/* Balloon size adjustments */
+	.balloons {
+		width: 40px;
+		height: 40px;
+	}
+
+	.balloons h2 {
+		font-size: 18px;
+		padding-top: 8px;
+	}
+
+	/* Cake container adjustments */
+	.cake-cover {
+		margin-top: 20px;
+	}
+
+	.cake {
+		transform: scale(0.6);
+		margin: -100px auto;
+	}
+
+	/* Button container adjustments */
+	.navbar-fixed-bottom {
+		position: relative;
+		margin-top: 20px;
+		padding: 10px;
+	}
+
+	.navbar-fixed-bottom .btn {
+		margin: 5px;
+		font-size: 14px;
+		padding: 6px 12px;
+		width: calc(50% - 10px);
+		float: left;
+	}
+
+	/* Message text adjustments */
+	.message p {
+		font-size: 16px;
+		margin: 10px 0;
+	}
+
+	/* Image container adjustments */
+	.image-container {
+		width: 100%;
+		padding: 10px;
+	}
+
+	.rotating-image {
+		max-width: 100%;
+		height: auto;
+		margin: 5px 0;
+	}
+
+	/* Banner adjustments */
+	.bannar {
+		max-width: 100%;
+		height: auto;
+	}
+
+	/* Bulb adjustments */
+	.bulb-holder {
+		margin-bottom: 10px;
+	}
+
+	/* Birthday age text */
+	.tuoi {
+		font-size: 24px;
+		margin: 15px 0;
+	}
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+	.balloons {
+		width: 30px;
+		height: 30px;
+	}
+
+	.balloons h2 {
+		font-size: 16px;
+		padding-top: 5px;
+	}
+
+	.cake {
+		transform: scale(0.4);
+		margin: -150px auto;
+	}
+
+	.navbar-fixed-bottom .btn {
+		width: 100%;
+		margin: 5px 0;
+	}
+
+	.message p {
+		font-size: 14px;
+	}
+}
 
 
     /*controlling tablet width*/
